@@ -1,42 +1,57 @@
-Projeto: Sistema de Alarme de Luminosidade com Arduino
+Sistema de Monitoramento de Luminosidade com Arduino
+
+Descrição do Projeto
+
+Este projeto implementa um sistema de monitoramento de luminosidade usando Arduino e um sensor LDR (fotoresistor).
+O sistema avalia o nível de luz ambiente e:
+
+Acende um LED verde se a luminosidade estiver dentro da faixa ideal.
+Acende um LED amarelo para indicar uma leve alteração (luz mais fraca ou mais forte).
+Acende um LED vermelho e ativa um buzzer por 3 segundos se a luminosidade estiver em condição crítica (muito baixa ou muito alta).
+Este sistema é útil para aplicações como:
+
+Controle de iluminação ambiente
+Monitoramento de salas, escritórios ou estufas
+Alarmes automáticos baseados na intensidade de luz
+Dependências
+
+Arduino IDE (para programar o Arduino)
+Biblioteca padrão Arduino.h (não é necessária nenhuma biblioteca externa)
+Materiais Necessários
+
+Quantidade	Componente
+1	Arduino Uno (ou similar)
+1	LDR (sensor de luminosidade)
+1	Resistor 10kΩ (para o LDR)
+3	LEDs (Verde, Amarelo, Vermelho)
+3	Resistores 220Ω (para os LEDs)
+1	Buzzer
+1	Protoboard e jumpers
+Esquema de Conexão
+
+LDR:
+Um terminal no 5V.
+Outro terminal ao pino A0 e ligado a um resistor de 10kΩ para o GND.
+LEDs:
+Verde no pino 3 (com resistor de 220Ω).
+Amarelo no pino 4 (com resistor de 220Ω).
+Vermelho no pino 5 (com resistor de 220Ω).
+Buzzer:
+Pino positivo no pino 6.
+Pino negativo no GND.
+Código Arduino
 
 
- Descrição do Projeto
+Como Reproduzir
 
-Este projeto consiste na implementação de um sistema de monitoramento e alarme baseado em Arduino, que faz a leitura da luminosidade ambiente utilizando um sensor LDR. A leitura é feita por meio do conversor analógico-digital (ADC) do Arduino, e os dados são convertidos para uma escala de 0 a 100% utilizando a função map().
-
-Com base na intensidade da luz, o sistema aciona LEDs indicadores e um buzzer:
-
-LED Verde: Indica que a luminosidade está em nível adequado (ambiente OK).
-LED Amarelo: Indica nível de alerta (acende e o buzzer soa por 3 segundos).
-LED Vermelho: Indica problema grave (luminosidade muito alta ou muito baixa).
-
-O sistema também pode ser estendido para exibir informações em um LCD 16x2, incluindo ícones personalizados.
-
- Dependências do projeto
- - Placa Arduino UNO
- - Sensor de luminosidade LDR 
- - LED Verde
- - LED Amarelo
- - LED Vermelho
- - Buzzer 
- - Display LCD 16x2 
- - Protoboard
- - Jumpers
- - Resistores
-   
-
-Biblioteca LiquidCrystal.h (Incluímos no Wokwi)
+Monte o circuito conforme o esquema de conexão acima.
+Copie o código fornecido.
+Abra o Arduino IDE, cole o código e selecione a placa Arduino Uno.
+Conecte o Arduino ao computador via USB.
+Clique em Upload para gravar o código na placa.
+Abra o Monitor Serial para observar a leitura da luminosidade em tempo real.
 
 
-Montando o circuito:
-
-Inicializamos o site Wokwi para fazer todo o circuito e código.
-Começamos adicionando os itens básicos como Protoboard,Jumpers, buzzer, leds, LDR e a placa arduíno.
-Primeiramente integramos os resistores e leds na protoboard e colocamos no arduino. 
-Adicionamos o sensor de iluminosidade(LDR) com jumpers e um resistor de 10 KΩ.
-Colocamos o buzzer integrado com jumpers na protoboard e no arduino.
-Para conectar o LCD conectamos cada jumper na respectiva entrada do Display e no arduino de acordo com o nosso código.
-
-
-
+Observação
+Você pode simular este projeto online usando plataformas como Wokwi (https://wokwi.com/).
+Para simulações é possível alterar os valores da luz manualmente no ambiente virtual.
